@@ -1,23 +1,25 @@
-
-class Dog{
-    dogBreed:string
-    constructor(dogBreed:string){
-        this.dogBreed=dogBreed;
+class Dog {
+    bark() {
+      console.log("bhoooo");
     }
-}
-class Cat{
-    catBreed:string
-    constructor(catBreed:string){
-        this.catBreed=catBreed;
+  }
+  
+  class Cat {
+    meow() {
+      console.log("meow ");
     }
-}
-
-
-
-// function filterDogs(){
-
-// }
-
-let cat1=new Cat("kitty1")
-let cat2=new Cat("kitty2")
-console.log( cat1 instanceof Cat)
+  }
+  
+  function filterDogs<T>(animals: T[]): Dog[] {
+    let animalsList: Dog[] = []; 
+    for (let animal of animals) { 
+      if (animal instanceof Dog) {
+        animalsList.push(animal); 
+      }
+    }
+    return animalsList; 
+  }
+  
+  const animals = [new Dog(), new Cat(), new Dog()];
+  console.log(filterDogs(animals)); 
+  

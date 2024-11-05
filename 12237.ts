@@ -38,7 +38,7 @@ enum Direction {
   
   let dir: string;
   function getDirection(direction: Direction): string {
-      console.log(direction)
+      // console.log(direction)
     switch (direction) {
       case Direction.UP:
         dir = Direction.UP;
